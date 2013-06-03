@@ -1,9 +1,9 @@
 Apriori
-=======
+=====================
 Simple Recommendation Engine using apriori method
 
-Example Input
-=================
+Example input
+---------------------
 <pre lang="php"><code>
 $minSupp  = 5;                  //minimal support
 $minConf  = 75;                 //minimal confidence
@@ -20,8 +20,8 @@ $data = array(
 ); //id(items)  
 </code></pre>
 
-Code
-=================
+Example code
+---------------------
 <pre lang="php"><code>
 try {
     $apri = new Apriori($type, $data, $minSupp, $minConf);
@@ -37,7 +37,7 @@ try {
 </code></pre>
 
 Example output
-=================
+---------------------
 <pre>
 --------------------------------------------------------------------------------
  Tr_id  Items

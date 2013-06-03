@@ -841,7 +841,7 @@ class Apriori {
     }
 
     /**
-     * Ustawia miejsce docelowe operacji wyświetlania wyników.
+     * Set if results should be displayed and/or saved to file and where.
      * @param boolean $targetDir [Optional] Destination directory for saving results.
      * @param boolean $display [Optional] If true, then results are displayed in console
      * @see $DISPLAY

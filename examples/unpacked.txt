@@ -1,0 +1,166 @@
+Array
+(
+    [0] => 0.75
+    [1] => 0.25
+    [2] => Array
+        (
+            [1] => Array
+                (
+                    [bread] => 3
+                    [milk] => 4
+                    [sugar] => 2
+                    [beer] => 3
+                )
+
+        )
+
+    [3] => Array
+        (
+            [1] => Array
+                (
+                    [beer] => 3
+                    [bread] => 3
+                    [milk] => 4
+                    [sugar] => 2
+                )
+
+            [2] => Array
+                (
+                    [beer,bread] => 1
+                    [beer,milk] => 3
+                    [beer,sugar] => 2
+                    [bread,milk] => 2
+                    [milk,sugar] => 2
+                )
+
+            [3] => Array
+                (
+                    [beer,bread,milk] => 1
+                    [beer,milk,sugar] => 2
+                )
+
+        )
+
+    [4] => Array
+        (
+            [beer] => Array
+                (
+                    [0] => Array
+                        (
+                            [supp] => 60
+                            [conf] => 100
+                            [Y] => milk
+                        )
+
+                )
+
+            [milk] => Array
+                (
+                    [0] => Array
+                        (
+                            [supp] => 60
+                            [conf] => 75
+                            [Y] => beer
+                        )
+
+                )
+
+            [sugar] => Array
+                (
+                    [0] => Array
+                        (
+                            [supp] => 40
+                            [conf] => 100
+                            [Y] => beer
+                        )
+
+                    [1] => Array
+                        (
+                            [supp] => 40
+                            [conf] => 100
+                            [Y] => milk
+                        )
+
+                    [2] => Array
+                        (
+                            [supp] => 40
+                            [conf] => 100
+                            [Y] => beer,milk
+                        )
+
+                )
+
+            [beer,bread] => Array
+                (
+                    [0] => Array
+                        (
+                            [supp] => 20
+                            [conf] => 100
+                            [Y] => milk
+                        )
+
+                )
+
+            [milk,sugar] => Array
+                (
+                    [0] => Array
+                        (
+                            [supp] => 40
+                            [conf] => 100
+                            [Y] => beer
+                        )
+
+                )
+
+            [beer,sugar] => Array
+                (
+                    [0] => Array
+                        (
+                            [supp] => 40
+                            [conf] => 100
+                            [Y] => milk
+                        )
+
+                )
+
+        )
+
+    [5] => Array
+        (
+            [0] => Array
+                (
+                    [0] => bread
+                    [1] => milk
+                )
+
+            [1] => Array
+                (
+                    [0] => sugar
+                    [1] => milk
+                    [2] => beer
+                )
+
+            [2] => Array
+                (
+                    [0] => bread
+                )
+
+            [3] => Array
+                (
+                    [0] => bread
+                    [1] => milk
+                    [2] => beer
+                )
+
+            [4] => Array
+                (
+                    [0] => sugar
+                    [1] => milk
+                    [2] => beer
+                )
+
+        )
+
+    [6] => 5
+    [7] => 3
+)

@@ -1,0 +1,12 @@
+--------------------------------------------------------------------------------
+   No.                     Set   Support                        Rule Confidence
+--------------------------------------------------------------------------------
+     0               beer,milk    60.00%                  beer=>milk   100.00%
+     1               beer,milk    60.00%                  milk=>beer    75.00%
+     2              beer,sugar    40.00%                 sugar=>beer   100.00%
+     3              milk,sugar    40.00%                 sugar=>milk   100.00%
+     4         beer,milk,sugar    40.00%            sugar=>beer,milk   100.00%
+     5         beer,bread,milk    20.00%            beer,bread=>milk   100.00%
+     6         beer,milk,sugar    40.00%            milk,sugar=>beer   100.00%
+     7         beer,milk,sugar    40.00%            beer,sugar=>milk   100.00%
+--------------------------------------------------------------------------------

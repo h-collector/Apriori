@@ -1,0 +1,11 @@
+#netbeans specific
+/nbproject/private/
+ 
+#general swap/backup files
+*.log
+*.out
+*~
+*.DS_Store
+*.lock
+
+/other/

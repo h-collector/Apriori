@@ -1,10 +1,10 @@
 Apriori
 =======
-
 Simple Recommendation Engine using apriori method
 
 Example Input
 =================
+<pre lang="php"><code>
 $minSupp  = 5;                  //minimal support
 $minConf  = 75;                 //minimal confidence
 $type     = Apriori::SRC_PLAIN; //data type
@@ -18,9 +18,27 @@ $data = array(
     'bread, milk, beer',
     'sugar, milk, beer'
 ); //id(items)  
+</code></pre>
+
+Code
+=================
+<pre lang="php"><code>
+try {
+    $apri = new Apriori($type, $data, $minSupp, $minConf);
+    $apri->displayTransactions()
+         ->solve()
+         ->generateRules()
+         ->displayRules()
+         ->displayRecommendations($recomFor)
+         ->saveState($dataFile);                 //save state with rules
+} catch (Exception $exc) {
+    echo $exc->getMessage();
+}
+</code></pre>
 
 Example output
 =================
+<pre>
 --------------------------------------------------------------------------------
  Tr_id  Items
 --------------------------------------------------------------------------------
@@ -47,3 +65,4 @@ Example output
 --------------------------------------------------------------------------------
      0    60.00%     100.00%  milk
 --------------------------------------------------------------------------------
+</pre>

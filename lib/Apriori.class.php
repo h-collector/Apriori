@@ -7,7 +7,7 @@
  *
  * @author  h-collector <githcoll@gmail.com>
  *          
- * @link    http://hcoll.onuse.pl/view/HCImage
+ * @link    http://hcoll.onuse.pl/view/Apriori
  * @license GNU LGPL (http://www.gnu.org/copyleft/lesser.html)
  * @version 0.9.2
  */
@@ -161,9 +161,9 @@ class Apriori {
     }
 
     /**
-     * <p>Fill te internal transaction array from from plain array.</p>
-     * <p>Plain array is array specified as follows: 
-     * array(tid1=>set1,tid2=>array(set2),set3,array(set4)...)</p>
+     * <p>Fill te internal transaction array from from transaction grouped array.</p>
+     * <p>Array is specified as follows: 
+     * array(id=>array(tid,item),..id=>array(tid,item), array(tid,item)...)</p>
      * @param mixed $plainData array of transactions
      * @see __construct()
      * @see setTransactions()
@@ -171,12 +171,12 @@ class Apriori {
      */
     private function setTransactionsFromDB(array $db) {
         //prepare internal transaction base and 1-element candidating sets
-        foreach ($db as $id => $t) {
+        foreach ($db as $t) {
             if (!is_array($t))
                 throw new RuntimeException('Bad data structure');
 
-            list($tid, $item) = $t;
-            $item = trim($item);
+            $tid  = $t[0];
+            $item = trim($t[1]);
 
             if (self::NO_REDUNDANCY && isset($this->trans[$tid]) && (false !== array_search($item, $this->trans[$tid])))
                 continue;
@@ -193,7 +193,7 @@ class Apriori {
      * <p>In transaction file items are separated by specified before static separator
      *  (by default comma), one transaction per line.</p>
      * <p>Plain array is array specified as follows: 
-     * array(tid1=>set1,tid2=>array(set2),set3,array(set4)...)</p>
+     * array(tid1=>set1,tid2=>array(item,item),set3,array(item,item)...)</p>
      * @param mixed $plainData array of transactions or filepath
      * @see __construct()
      * @see setTransactionsFromDB()
@@ -202,13 +202,13 @@ class Apriori {
      */
     private function setTransactions($plainData) {
         $trans = array();
-        if (!is_array($plainData)) {
+        if (is_array($plainData)) {
+            $trans = $plainData;
+        } else {
             if (!is_file($plainData))
                 throw new RuntimeException('Data file not found');
             $trans = file($plainData, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         }
-        else
-            $trans = $plainData;
 
         //fill array of 1-element candidating sets
         $this->C[1] = array();

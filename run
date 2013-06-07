@@ -1,0 +1,44 @@
+#!/bin/bash
+
+command_name="/usr/bin/php cmd_apriori.php"
+
+options=(
+    "--solve"
+    "--genrules"
+    #"--disprules"
+    "--timeit"
+    "--verbose"
+    #"--noconsole"
+    "--pbar"
+    #"--disptrans"
+    #"--realmem"
+    #"--help"
+)
+parameter=(
+    "--minsupp=5.0"
+    "--minconf=60.0"
+    "--srctype=CSV"
+    "--srcdata=file=>data/msdn.csv,tid=>transactId,item=>softwareName,enclosure=>'"
+    "--recommend=Virtual PC 2007"
+    #"--resdir="./results""
+    #"--charset=utf-8"
+    #"--minitemset=2"
+    #"--maxitemset=3"
+    #"--save=msdn_5_60.gz"
+    #"--load=msdn_5_60.gz"
+)
+
+$command_name "${options[@]}" "${parameter[@]}"
+
+#Examples
+# $command_name --save=data/transact_5_75.gz --disptrans --solve --genrules --timeit --debug
+# $command_name --load=data/transact_5_75.gz --recommend="Nut" --disprules --timeit
+# $command_name --minsupp=5 --minconf=60 --solve --genrules --disprules --timeit --srctype=PLAIN --srcdata=data/plain.txt
+# $command_name --minsupp=5 --minconf=60 --solve --genrules --disprules --timeit \
+#               --srctype=PLAIN --srcdata="bread,milk|milk,beer|sugar,milk,beer|bread,milk"
+# $command_name --minsupp=1 --minconf=60 --minitemset=2 --maxitemset=3 --timeit --solve --genrules \
+#               --disptrans --disprules --recommend="Coke" --srctype=CSV \
+#               --srcdata="file=>data/transact.csv,tid=>transactId,item=>itemName,delim=>\t"
+# $command_name --minsupp=5 --minconf=60 --solve --genrules --disprules --timeit --debug --save=data/msdn_5_60.gz \
+#               --srctype=CSV --srcdata="file=>data/msdn.csv,tid=>transactId,item=>softwareName,enclosure=>'"
+# $command_name --load=data/msdn_5_60.gz --recommend="Virtual PC 2007" --timeit

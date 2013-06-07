@@ -1,0 +1,5 @@
+bread, milk
+sugar, milk, beer
+bread
+bread, milk, beer
+sugar, milk, beer
